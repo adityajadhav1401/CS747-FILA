@@ -1,0 +1,24 @@
+CS 747, Assignment 3
+Aditya Jadhav (160050010)
+
+I have used a model based approach in which, we are maintaining the necessary counts of the total visits, transitions and rewards for each (S, A, R, S') tuple. 
+We also maintain a probability distribution that captures the probabilities of taking action (Ai) for each state (S). This is to handle stochastic policies. 
+We use these counts to calculate estimates of Transition (T-Est) and Reward (R-Est) functions. Now, using these transition, reward and probability estimates,
+we calculate the Value (V-Est) functions using value iteration theorem. 
+
+Along with the model based approach, I have also tried using TD Lambda approach which is a model free approach. 
+But the errors seen in the given two data files and some other self-test files suggest that model based performs better.
+
+Some of the advanteges of model based approach is that it does not require tuning of the lambda parameter and works well for all possible trace sizes.
+But, the disadvantage of using model based approach is the space complexity and the fact that it is an off policy method as opposed to the other TD Lambda.
+
+
+
+The squared difference values for the given files are
+
+| FILE NAME | 	  METHOD 	 |	  	SQUARED ERROR 	    | 
+| 	v1.txt	|	TD Lambda	 |	 0.22009149731876154	|
+|	v1.txt	|   TD Lambda	 |	3.387614390485999  e-05	|
+|	v2.txt	|	Model Based	 |	 0.01360615695927919	|
+|	v2.txt	|   Model Based  |	1.7228861720678366 e-05	|
+

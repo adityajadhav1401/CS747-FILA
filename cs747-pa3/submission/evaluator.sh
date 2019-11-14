@@ -1,0 +1,1 @@
+python3 estimator.py --trace $1
